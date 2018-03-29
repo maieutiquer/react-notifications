@@ -51,16 +51,29 @@ class Notification extends React.Component {
     }
   };
 
+  mapAlertTypeToIconName = alertType =>
+    ({
+      success: 'tick',
+      info: 'market-value',
+      warning: 'notification-icon',
+      danger: 'warning-hard-stop',
+      error: 'warning-hard-stop'
+    }[alertType] || 'market-value')
+
+
   render() {
     const { type, message } = this.props;
     let { title } = this.props;
-    const className = classnames(['notification', `notification-${type}`]);
+    const className = classnames(['alert', `alert-${type === 'error' ? 'danger' : type}`]);
     title = title ? (<h4 className="title">{title}</h4>) : null;
     return (
       <div className={className} onClick={this.handleClick}>
-        <div className="notification-message" role="alert">
-          {title}
-          <div className="message">{message}</div>
+        <div className="alert-icon-box">
+          <i className={`connect-icon connect-icon-${this.mapAlertTypeToIconName(type)}`} aria-hidden="true" />
+        </div>
+        <div className="alert-text" role="alert">
+          <h2>{title}</h2>
+          <span>{message}</span>
         </div>
       </div>
     );

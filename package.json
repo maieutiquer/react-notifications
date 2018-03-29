@@ -1,12 +1,12 @@
 {
-  "name": "react-notifications",
-  "version": "1.4.3",
-  "description": "Notification component for ReactJS",
+  "name": "react-notifications-extended",
+  "version": "2.0.1",
+  "description": "Notification component for ReactJS - extended",
   "main": "lib/index.js",
   "scripts": {
-    "start": "NODE_ENV=development babel-node example/webpack.server.js --hot",
-    "lint": "NODE_ENV=development eslint .",
-    "build": "NODE_ENV=production gulp build"
+    "start": "cross-env NODE_ENV=development babel-node example/webpack.server.js --hot",
+    "lint": "cross-env NODE_ENV=development eslint .",
+    "build": "cross-env NODE_ENV=production gulp build"
   },
   "keywords": [
     "react-component",
@@ -72,12 +72,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/minhtranite/react-notifications.git"
+    "url": "https://github.com/maieutiquer/react-notifications.git"
   },
-  "author": "Minh Tran",
+  "author": "Daniel Rodriguez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/minhtranite/react-notifications/issues"
+    "url": "https://github.com/maieutiquer/react-notifications/issues"
   },
-  "homepage": "https://github.com/minhtranite/react-notifications"
+  "homepage": "https://github.com/maieutiquer/react-notifications"
 }
